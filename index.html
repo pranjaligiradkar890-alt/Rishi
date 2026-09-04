@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>for you, always ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Caveat:wght@400;500;600;700&family=DM+Mono:wght@300;400&family=Fredoka:wght@400;500;600&family=Pacifico&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    overflow-x:hidden;
+    color:#55434d;
+    background:#f3e8ed;
+    font-family:"Playfair Display",serif;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-5;
+
+    background:
+        radial-gradient(circle at 15% 15%,#f9dce8 0,transparent 28%),
+        radial-gradient(circle at 85% 20%,#ded7f2 0,transparent 30%),
+        radial-gradient(circle at 25% 85%,#f8e8bc 0,transparent 25%),
+        radial-gradient(circle at 80% 85%,#d8e6e5 0,transparent 28%),
+        #f3e8ed;
+}
+
+.flower{
+    position:fixed;
+    z-index:-2;
+    opacity:.20;
+    pointer-events:none;
+    font-size:100px;
+}
+
+.flower.one{
+    left:-25px;
+    top:8%;
+    transform:rotate(-18deg);
+}
+
+.flower.two{
+    right:-20px;
+    top:42%;
+    transform:rotate(18deg);
+}
+
+.flower.three{
+    left:2%;
+    bottom:5%;
+    font-size:75px;
+    opacity:.14;
+}
+
+.page{
+    width:min(1100px,92%);
+    margin:auto;
+}
+
+section{
+    min-height:100vh;
+    padding:100px 0;
+    position:relative;
+}
+
+.small{
+    font-family:"DM Mono",monospace;
+    font-size:10px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:#9b7183;
+}
+
+.center{
+    text-align:center;
+}
+
+.hand{
+    font-family:"Caveat",cursive;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero-card{
+    width:min(850px,100%);
+    text-align:center;
+    padding:70px 25px;
+    position:relative;
+}
+
+.hero-card::before{
+    content:"";
+    position:absolute;
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    background:#fff7d8;
+    opacity:.7;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:-1;
+}
+
+.mini-heart{
+    font-size:25px;
+    color:#c57d95;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-family:"Pacifico",cursive;
+    font-size:clamp(48px,10vw,100px);
+    font-weight:400;
+    color:#81556b;
+    line-height:1.15;
+}
+
+.hero-sub{
+    font-family:"Caveat",cursive;
+    font-size:clamp(27px,5vw,43px);
+    color:#a36e7e;
+    margin-top:20px;
+}
+
+.hero-date{
+    margin-top:35px;
+    font-family:"DM Mono",monospace;
+    font-size:12px;
+    letter-spacing:4px;
+    color:#8c6b77;
+}
+
+.hero-bottom{
+    margin-top:45px;
+    font-family:"Fredoka",sans-serif;
+    font-size:13px;
+    color:#8d7380;
+}
+
+/* INTRO */
+
+.memory-intro{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.intro-title{
+    font-family:"Bodoni Moda",serif;
+    font-size:clamp(45px,7vw,75px);
+    line-height:.95;
+    color:#674f5d;
+}
+
+.intro-title em{
+    color:#b77b90;
+}
+
+.intro-text{
+    font-size:19px;
+    line-height:2;
+}
+
+.intro-text span{
+    font-family:"Caveat",cursive;
+    font-size:29px;
+    color:#a0657a;
+}
+
+/* SCRAPBOOK */
+
+.board{
+    background:#e5dcf0;
+    border-radius:35px;
+    padding:70px 35px;
+    position:relative;
+    box-shadow:0 25px 80px rgba(85,65,80,.12);
+}
+
+.board-title{
+    font-family:"Caveat",cursive;
+    font-size:55px;
+    color:#725675;
+    text-align:center;
+}
+
+.board-sub{
+    text-align:center;
+    font-family:"Fredoka",sans-serif;
+    font-size:12px;
+    color:#927b9a;
+    margin-top:8px;
+}
+
+.scraps{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin-top:55px;
+}
+
+.scrap{
+    padding:25px;
+    min-height:180px;
+    position:relative;
+    box-shadow:0 15px 35px rgba(75,60,75,.12);
+}
+
+.scrap:nth-child(1){
+    background:#fff1b9;
+    transform:rotate(-3deg);
+}
+
+.scrap:nth-child(2){
+    background:#f8dce6;
+    transform:rotate(2deg);
+}
+
+.scrap:nth-child(3){
+    background:#d9ece9;
+    transform:rotate(-2deg);
+}
+
+.scrap:nth-child(4){
+    background:#f5e0d1;
+    transform:rotate(2deg);
+}
+
+.scrap:nth-child(5){
+    background:#ded8f0;
+    transform:rotate(-2deg);
+}
+
+.scrap:nth-child(6){
+    background:#f9d6df;
+    transform:rotate(3deg);
+}
+
+.scrap h3{
+    font-family:"Caveat",cursive;
+    font-size:31px;
+    font-weight:500;
+    color:#715362;
+    margin-bottom:10px;
+}
+
+.scrap p{
+    font-size:14px;
+    line-height:1.7;
+}
+
+.tape{
+    position:absolute;
+    width:65px;
+    height:18px;
+    background:rgba(255,255,255,.48);
+    top:-9px;
+    left:50%;
+    transform:translateX(-50%) rotate(-2deg);
+}
+
+/* LETTER */
+
+.letter-area{
+    max-width:800px;
+    margin:60px auto;
+    position:relative;
+}
+
+.letter{
+    background:#f7ecd9;
+    padding:75px 60px;
+    box-shadow:0 25px 70px rgba(73,55,59,.18);
+    position:relative;
+    transform:rotate(-1deg);
+}
+
+.letter::before{
+    content:"";
+    position:absolute;
+    inset:14px;
+    border:1px solid rgba(120,85,75,.22);
+}
+
+.stamp{
+    position:absolute;
+    right:30px;
+    top:25px;
+    width:82px;
+    height:82px;
+    border:5px dotted #fff0dc;
+    background:#ca8298;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-family:"Caveat",cursive;
+    font-size:22px;
+    transform:rotate(7deg);
+}
+
+.postmark{
+    position:absolute;
+    right:125px;
+    top:45px;
+    font-family:"DM Mono",monospace;
+    font-size:7px;
+    letter-spacing:1px;
+    color:#9d747c;
+    transform:rotate(-12deg);
+}
+
+.letter-inside{
+    position:relative;
+    z-index:2;
+}
+
+.letter-to{
+    font-family:"Caveat",cursive;
+    font-size:31px;
+    color:#7c5965;
+    margin:25px 0;
+}
+
+.letter p{
+    font-size:18px;
+    line-height:2;
+    margin-bottom:18px;
+}
+
+.letter-sign{
+    font-family:"Caveat",cursive;
+    font-size:34px;
+    color:#87596b;
+    margin-top:30px;
+}
+
+/* PHOTOS */
+
+.photos-title h2{
+    font-family:"Bodoni Moda",serif;
+    font-size:clamp(45px,8vw,80px);
+    font-weight:400;
+    color:#68515e;
+}
+
+.photos-title p{
+    font-family:"Caveat",cursive;
+    font-size:28px;
+    color:#a46e80;
+}
+
+.polaroid-wall{
+    margin:65px auto;
+    max-width:950px;
+
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:28px;
+}
+
+.polaroid{
+    background:#fffaf6;
+    padding:12px 12px 35px;
+    box-shadow:0 18px 40px rgba(70,55,60,.16);
+    position:relative;
+    transition:.35s ease;
+}
+
+.polaroid:hover{
+    transform:translateY(-8px) rotate(0deg)!important;
+}
+
+.polaroid:nth-child(1){
+    grid-column:1 / span 3;
+    transform:rotate(-4deg);
+}
+
+.polaroid:nth-child(2){
+    grid-column:4 / span 3;
+    transform:rotate(4deg);
+    margin-top:35px;
+}
+
+.polaroid:nth-child(3){
+    grid-column:2 / span 3;
+    transform:rotate(-2deg);
+    margin-top:20px;
+}
+
+.polaroid:nth-child(4){
+    grid-column:1 / span 3;
+    transform:rotate(3deg);
+    margin-top:15px;
+}
+
+.polaroid:nth-child(5){
+    grid-column:4 / span 3;
+    transform:rotate(-3deg);
+    margin-top:55px;
+}
+
+.polaroid img{
+    width:100%;
+    height:310px;
+    object-fit:cover;
+    display:block;
+    background:#eee;
+}
+
+.polaroid:nth-child(4) img{
+    object-fit:contain;
+    background:#f5edf0;
+}
+
+.polaroid-caption{
+    text-align:center;
+    padding-top:14px;
+    font-family:"Caveat",cursive;
+    font-size:26px;
+    color:#755565;
+}
+
+.clip{
+    position:absolute;
+    top:-18px;
+    left:50%;
+    transform:translateX(-50%) rotate(5deg);
+    width:25px;
+    height:45px;
+    border:3px solid #b88998;
+    border-radius:15px;
+    background:transparent;
+}
+
+.tiny-note{
+    position:absolute;
+    bottom:-18px;
+    right:-18px;
+    background:#fff0a8;
+    padding:7px 13px;
+    font-family:"Caveat",cursive;
+    font-size:19px;
+    transform:rotate(5deg);
+}
+
+/* DEEP MESSAGE */
+
+.deep{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+}
+
+.deep h2{
+    font-family:"Pacifico",cursive;
+    font-size:clamp(42px,8vw,75px);
+    color:#7c5870;
+    font-weight:400;
+}
+
+.deep p{
+    margin-top:30px;
+    font-size:20px;
+    line-height:2;
+}
+
+.highlight{
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 22px;
+    background:#fff0b6;
+    transform:rotate(-2deg);
+    font-family:"Caveat",cursive;
+    font-size:27px;
+}
+
+/* QUESTIONS */
+
+.question-area{
+    max-width:750px;
+    margin:auto;
+}
+
+.question-area h2{
+    text-align:center;
+    font-family:"Caveat",cursive;
+    font-size:65px;
+    color:#755368;
+}
+
+.question{
+    margin-top:18px;
+    padding:22px 25px;
+    background:rgba(255,255,255,.55);
+    border-radius:20px;
+    border:1px solid rgba(130,95,110,.12);
+    cursor:pointer;
+    font-family:"Fredoka",sans-serif;
+    font-size:15px;
+    transition:.3s;
+}
+
+.question:hover{
+    background:white;
+}
+
+.answer{
+    display:none;
+    padding-top:15px;
+    font-family:"Caveat",cursive;
+    font-size:25px;
+    color:#865d70;
+    line-height:1.4;
+}
+
+.question.open .answer{
+    display:block;
+}
+
+/* MUSIC */
+
+.music-card{
+    width:min(500px,100%);
+    margin:50px auto;
+    padding:50px 30px;
+    background:#d9e9e5;
+    border-radius:35px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(65,75,70,.12);
+}
+
+.music-card .disc{
+    font-size:55px;
+}
+
+.music-card h3{
+    margin-top:15px;
+    font-family:"Caveat",cursive;
+    font-size:39px;
+    color:#60766e;
+}
+
+.music-card p{
+    margin-top:5px;
+    font-family:"Fredoka",sans-serif;
+    font-size:12px;
+    color:#789087;
+}
+
+.play{
+    margin-top:25px;
+    padding:13px 28px;
+    border:0;
+    border-radius:30px;
+    background:#7c6474;
+    color:white;
+    font-family:"Fredoka",sans-serif;
+    cursor:pointer;
+}
+
+/* FINAL */
+
+.final{
+    text-align:center;
+}
+
+.final .tiny{
+    font-family:"DM Mono",monospace;
+    letter-spacing:3px;
+    font-size:10px;
+}
+
+.final h2{
+    margin-top:30px;
+    font-family:"Pacifico",cursive;
+    font-size:clamp(55px,12vw,125px);
+    font-weight:400;
+    color:#81566d;
+}
+
+.final p{
+    max-width:650px;
+    margin:35px auto 0;
+    font-size:20px;
+    line-height:2;
+}
+
+.final-date{
+    margin-top:45px;
+    font-family:"Caveat",cursive;
+    font-size:32px;
+    color:#a36b7f;
+}
+
+.bye{
+    margin-top:20px;
+    font-family:"Fredoka",sans-serif;
+    font-size:12px;
+    color:#947986;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    section{
+        padding:80px 0;
+    }
+
+    .memory-intro{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .scraps{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .letter{
+        padding:70px 27px 55px;
+    }
+
+    .postmark{
+        right:105px;
+    }
+
+    .polaroid-wall{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:45px;
+    }
+
+    .polaroid{
+        width:88%;
+        margin:0!important;
+    }
+
+    .polaroid:nth-child(1){
+        transform:rotate(-3deg);
+    }
+
+    .polaroid:nth-child(2){
+        transform:rotate(3deg);
+    }
+
+    .polaroid:nth-child(3){
+        transform:rotate(-2deg);
+    }
+
+    .polaroid:nth-child(4){
+        transform:rotate(3deg);
+    }
+
+    .polaroid:nth-child(5){
+        transform:rotate(-3deg);
+    }
+
+    .polaroid img{
+        height:300px;
+    }
+}
+
+@media(max-width:450px){
+
+    .scraps{
+        grid-template-columns:1fr;
+    }
+
+    .letter p{
+        font-size:17px;
+    }
+
+    .polaroid{
+        width:94%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="flower one">🌷</div>
+<div class="flower two">🌹</div>
+<div class="flower three">🌸</div>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-card">
+
+<div class="mini-heart">♡ ˚₊‧</div>
+
+<div class="small">
+a tiny corner of the internet
+made only for you
+</div>
+
+<h1>
+six months<br>
+of us ♡
+</h1>
+
+<div class="hero-sub">
+and I'd still pick you.<br>
+every single time.
+</div>
+
+<div class="hero-date">
+05 · 04 · 2026
+</div>
+
+<div class="hero-bottom">
+please scroll slowly ♡<br>
+there are memories here
+</div>
+
+</div>
+
+</section>
+
+
+<!-- INTRO -->
+
+<section>
+
+<div class="page memory-intro">
+
+<div>
+
+<div class="small">
+dear you,
+</div>
+
+<div class="intro-title">
+I didn't know<br>
+you would become<br>
+<em>this important.</em>
+</div>
+
+</div>
+
+<div class="intro-text">
+
+<p>
+Some people enter your life quietly,
+and then one day you realise they've
+taken up an entire little room in your heart.
+</p>
+
+<p>
+That's what happened with you.
+</p>
+
+<p>
+You became the person I want to tell
+things to. The person I look for.
+The person whose name can somehow
+change the entire mood of my day.
+</p>
+
+<span>
+"somehow, it became us."
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SCRAPBOOK -->
+
+<section>
+
+<div class="page">
+
+<div class="board">
+
+<div class="board-title">
+things that feel like you ♡
+</div>
+
+<div class="board-sub">
+a completely unserious collection of very serious feelings
+</div>
+
+<div class="scraps">
+
+<div class="scrap">
+<div class="tape"></div>
+<h3>your voice</h3>
+<p>
+One of those sounds I could recognise
+even in a room full of people.
+</p>
+</div>
+
+<div class="scrap">
+<div class="tape"></div>
+<h3>your existence</h3>
+<p>
+Honestly? Very inconvenient.
+Because now I miss you whenever
+you're not around.
+</p>
+</div>
+
+<div class="scrap">
+<div class="tape"></div>
+<h3>our nonsense</h3>
+<p>
+The stupid jokes, random conversations
+and moments that would make absolutely
+no sense to anyone else.
+</p>
+</div>
+
+<div class="scrap">
+<div class="tape"></div>
+<h3>the comfort</h3>
+<p>
+That feeling of not needing to explain
+every little thing because somehow
+you just understand.
+</p>
+</div>
+
+<div class="scrap">
+<div class="tape"></div>
+<h3>the memories</h3>
+<p>
+Tiny moments that didn't look important
+when they happened, but became my
+favourite memories later.
+</p>
+</div>
+
+<div class="scrap">
+<div class="tape"></div>
+<h3>you.</h3>
+<p>
+Yes, this entire ridiculous scrapbook
+basically exists because of you.
+So congratulations.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- LOVE LETTER -->
+
+<section>
+
+<div class="page">
+
+<div class="center">
+
+<div class="small">
+posted with love
+</div>
+
+</div>
+
+<div class="letter-area">
+
+<div class="letter">
+
+<div class="stamp">
+LOVE<br>♡
+</div>
+
+<div class="postmark">
+LOVE POST<br>
+05 APR 2026<br>
+FOREVER MAIL
+</div>
+
+<div class="letter-inside">
+
+<div class="small">
+05 / 04 / 2026
+</div>
+
+<div class="letter-to">
+my favourite person,
+</div>
+
+<p>
+If I tried to put everything I feel for you
+into one letter, I don't think the paper
+would be big enough.
+</p>
+
+<p>
+Six months sounds like a number.
+But when I look back, I don't see a number.
+I see conversations, laughs, stupid moments,
+little arguments, apologies, memories,
+and hundreds of tiny moments that somehow
+became ours.
+</p>
+
+<p>
+I love that we aren't some perfectly written
+love story. We're real. We're messy.
+Sometimes ridiculous. Sometimes confusing.
+Sometimes unbelievably cute without even
+trying.
+</p>
+
+<p>
+And maybe that's what I love most.
+It's not just the big moments.
+It's the ordinary ones.
+It's knowing that somewhere in my day
+there is a person I can think about and
+instantly feel a little softer.
+</p>
+
+<p>
+Thank you for becoming a part of my life
+that I don't want to imagine without.
+Thank you for every laugh, every memory,
+every conversation, every little thing you
+probably don't even realise I remember.
+</p>
+
+<p>
+If I could go back to the beginning,
+knowing everything I know now...
+</p>
+
+<p>
+I'd still choose you.
+</p>
+
+<div class="letter-sign">
+yours, always ♡
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FIVE POLAROIDS -->
+
+<section>
+
+<div class="page">
+
+<div class="photos-title center">
+
+<div class="small">
+our evidence
+</div>
+
+<h2>
+little pieces of us
+</h2>
+
+<p>
+five photographs I wish I could keep
+inside my pocket forever.
+</p>
+
+</div>
+
+
+<div class="polaroid-wall">
+
+
+<!-- PHOTO 1 -->
+
+<div class="polaroid">
+
+<div class="clip"></div>
+
+<img
+src="https://raw.githubusercontent.com/pranjaligiradkar890-alt/Rishi/main/IMG_7559.jpeg"
+alt="Our memory 1"
+>
+
+<div class="polaroid-caption">
+this one ♡
+</div>
+
+<div class="tiny-note">
+keep me
+</div>
+
+</div>
+
+
+<!-- PHOTO 2 -->
+
+<div class="polaroid">
+
+<div class="clip"></div>
+
+<img
+src="https://raw.githubusercontent.com/pranjaligiradkar890-alt/Rishi/main/PHOTO2.jpeg"
+alt="Our memory 2"
+>
+
+<div class="polaroid-caption">
+look at us :')
+</div>
+
+<div class="tiny-note">
+favourite
+</div>
+
+</div>
+
+
+<!-- PHOTO 3 -->
+
+<div class="polaroid">
+
+<div class="clip"></div>
+
+<img
+src="https://raw.githubusercontent.com/pranjaligiradkar890-alt/Rishi/main/PHOTO3.jpeg"
+alt="Our memory 3"
+>
+
+<div class="polaroid-caption">
+a tiny forever
+</div>
+
+<div class="tiny-note">
+♡ ♡ ♡
+</div>
+
+</div>
+
+
+<!-- PHOTO 4 PNG -->
+
+<div class="polaroid">
+
+<div class="clip"></div>
+
+<img
+src="https://raw.githubusercontent.com/pranjaligirkar890-alt/Rishi/main/PHOTO4.png"
+alt="Our memory 4"
+>
+
+<div class="polaroid-caption">
+I remember this
+</div>
+
+<div class="tiny-note">
+don't forget
+</div>
+
+</div>
+
+
+<!-- PHOTO 5 -->
+
+<div class="polaroid">
+
+<div class="clip"></div>
+
+<img
+src="https://raw.githubusercontent.com/pranjaligiradkar890-alt/Rishi/main/PHOTO5.jpeg"
+alt="Our memory 5"
+>
+
+<div class="polaroid-caption">
+one more for my heart
+</div>
+
+<div class="tiny-note">
+us ♡
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DEEP MESSAGE -->
+
+<section>
+
+<div class="page">
+
+<div class="deep">
+
+<div class="small">
+if I could explain it
+</div>
+
+<h2>
+here's what you mean to me.
+</h2>
+
+<p>
+You are not just someone I love.
+You're someone whose presence slowly
+became part of the way I experience life.
+</p>
+
+<p>
+There are songs that remind me of you.
+Places that make me think of you.
+Little things I notice because I know
+you would notice them too.
+</p>
+
+<p>
+Sometimes, in the middle of a completely
+ordinary day, I'll remember something you said
+or something we did and smile for no reason.
+</p>
+
+<p>
+I don't think love is always some giant,
+dramatic feeling.
+Sometimes I think it's much quieter than that.
+</p>
+
+<p>
+It's remembering.
+It's caring.
+It's choosing.
+It's staying.
+It's wanting to tell one particular person
+about the smallest things.
+</p>
+
+<div class="highlight">
+and you became that person for me. ♡
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- QUESTIONS -->
+
+<section>
+
+<div class="page">
+
+<div class="question-area">
+
+<div class="small center">
+open these slowly
+</div>
+
+<h2>
+little secrets ♡
+</h2>
+
+<div class="question">
+Why do I love you?
+
+<div class="answer">
+Because somewhere between all the ordinary
+moments, you became extraordinarily important
+to me.
+</div>
+
+</div>
+
+<div class="question">
+What makes you different?
+
+<div class="answer">
+It's the comfort. The familiarity.
+The way being around you can make
+everything feel a little less heavy.
+</div>
+
+</div>
+
+<div class="question">
+What is my favourite thing about us?
+
+<div class="answer">
+That we're not perfect.
+We're just two people figuring things out,
+laughing, learning and creating something
+that feels like ours.
+</div>
+
+</div>
+
+<div class="question">
+What do I want next?
+
+<div class="answer">
+More birthdays. More anniversaries.
+More pictures. More inside jokes.
+More ordinary Tuesdays that somehow
+become memories.
+</div>
+
+</div>
+
+<div class="question">
+One last secret...
+
+<div class="answer">
+I don't just want to remember these
+six months. I want to keep making
+memories with you. ♡
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MUSIC -->
+
+<section>
+
+<div class="page">
+
+<div class="center">
+
+<div class="small">
+our little soundtrack
+</div>
+
+<h2 class="hand" style="font-size:65px;color:#705b68;">
+press play ♡
+</h2>
+
+</div>
+
+<div class="music-card">
+
+<div class="disc">
+♡
+</div>
+
+<h3>
+this song belongs here
+</h3>
+
+<p>
+because every little love story
+needs a soundtrack.
+</p>
+
+<button class="play" onclick="toggleMusic()">
+♡ play our song
+</button>
+
+<audio id="song" src="song.mp3"></audio>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="final">
+
+<div class="page">
+
+<div class="tiny">
+05 · 04 · 2026
+</div>
+
+<h2>
+still you.
+</h2>
+
+<p>
+Six months later, after all the laughs,
+the conversations, the memories,
+the difficult moments and the beautiful ones...
+</p>
+
+<p>
+I'd still look at you and think,
+<br>
+<strong>
+"yes. you."
+</strong>
+</p>
+
+<p>
+Thank you for these six months.
+Thank you for being you.
+And thank you for giving me
+so many little memories to keep.
+</p>
+
+<div class="final-date">
+happy six months, my love ♡
+</div>
+
+<div class="bye">
+made with too much love & a tiny bit of madness
+</div>
+
+</div>
+
+</section>
+
+
+<script>
+
+const questions =
+document.querySelectorAll(".question");
+
+questions.forEach(function(question){
+
+    question.addEventListener("click",function(){
+
+        question.classList.toggle("open");
+
+    });
+
+});
+
+
+const song =
+document.getElementById("song");
+
+const playButton =
+document.querySelector(".play");
+
+function toggleMusic(){
+
+    if(song.paused){
+
+        song.play();
+
+        playButton.innerHTML =
+        "♡ pause our song";
+
+    }else{
+
+        song.pause();
+
+        playButton.innerHTML =
+        "♡ play our song";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
