@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>5 April — A Film About Us</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono&family=Italianno&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
+<style>
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+margin:0;
+background:#0b0808;
+color:#eee0cf;
+font-family:"Cormorant Garamond",serif;
+overflow-x:hidden;
+}
+
+body:before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:20;
+opacity:.055;
+background-image:
+repeating-linear-gradient(
+0deg,
+transparent 0px,
+rgba(255,255,255,.4) 1px,
+transparent 2px
+);
+}
+
+.page{
+width:min(900px,92%);
+margin:auto;
+}
+
+
+/* CINEMATIC OPENING */
+
+.hero{
+height:100vh;
+min-height:620px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+}
+
+.hero:after{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle,#5c1722 0%,transparent 45%),
+linear-gradient(90deg,#080505,#17090c,#080505);
+opacity:.55;
+z-index:-1;
+}
+
+.film{
+font-family:"DM Mono";
+font-size:9px;
+letter-spacing:5px;
+color:#a9937e;
+margin-bottom:25px;
+}
+
+.title{
+font-family:"Playfair Display",serif;
+font-style:italic;
+font-size:clamp(55px,10vw,100px);
+font-weight:400;
+line-height:.9;
+color:#ead8c0;
+}
+
+.subtitle{
+font-family:"Italianno";
+font-size:45px;
+color:#a83a49;
+margin-top:20px;
+}
+
+.date{
+font-family:"DM Mono";
+font-size:10px;
+letter-spacing:4px;
+margin-top:35px;
+color:#9c8b7b;
+}
+
+.scroll{
+position:absolute;
+bottom:30px;
+font-family:"DM Mono";
+font-size:8px;
+letter-spacing:3px;
+color:#705c55;
+}
+
+
+/* FILM STRIP */
+
+.strip{
+display:flex;
+gap:8px;
+overflow:hidden;
+margin:0 -5%;
+padding:13px 0;
+background:#050404;
+border-top:1px solid #382529;
+border-bottom:1px solid #382529;
+}
+
+.frame{
+min-width:58px;
+height:42px;
+border:3px solid #21191a;
+background:#302122;
+position:relative;
+}
+
+.frame:after{
+content:"";
+position:absolute;
+inset:3px;
+border:1px solid #49373a;
+}
+
+
+/* LETTER */
+
+.letter{
+margin:90px auto;
+max-width:730px;
+background:#e6d3b2;
+color:#34211d;
+padding:50px 45px;
+position:relative;
+box-shadow:0 25px 70px #000;
+transform:rotate(-.5deg);
+}
+
+.letter:before{
+content:"SCENE 01";
+position:absolute;
+top:18px;
+left:20px;
+font-family:"DM Mono";
+font-size:8px;
+letter-spacing:2px;
+color:#8b6d59;
+}
+
+.letter:after{
+content:"♥";
+position:absolute;
+right:25px;
+bottom:18px;
+font-size:24px;
+color:#8b2433;
+}
+
+.letter h2{
+font-family:"Italianno";
+font-weight:400;
+font-size:46px;
+color:#711b29;
+margin:15px 0 18px;
+}
+
+.letter p{
+font-size:20px;
+line-height:1.6;
+margin:0 0 17px;
+}
+
+.signature{
+font-family:"Italianno";
+font-size:40px;
+text-align:right;
+color:#711b29;
+}
+
+
+/* SECTION */
+
+.section{
+text-align:center;
+margin:90px 0 30px;
+}
+
+.section small{
+font-family:"DM Mono";
+font-size:8px;
+letter-spacing:4px;
+color:#806b61;
+}
+
+.section h2{
+font-family:"Playfair Display";
+font-style:italic;
+font-weight:400;
+font-size:38px;
+margin:8px 0;
+}
+
+
+/* PHOTOS */
+
+.gallery{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:24px;
+}
+
+.photo{
+background:#ddd0bb;
+padding:8px 8px 35px;
+box-shadow:0 18px 45px #000;
+position:relative;
+}
+
+.photo img{
+width:100%;
+height:310px;
+object-fit:cover;
+display:block;
+filter:sepia(.1) contrast(.94);
+}
+
+.photo span{
+position:absolute;
+bottom:7px;
+left:13px;
+font-family:"Italianno";
+font-size:24px;
+color:#39231f;
+}
+
+.photo:before{
+content:"●";
+position:absolute;
+z-index:2;
+top:-7px;
+left:50%;
+transform:translateX(-50%);
+font-size:13px;
+color:#7d202f;
+}
+
+.a{transform:rotate(-2deg)}
+.b{transform:rotate(2deg)}
+.c{transform:rotate(1deg)}
+.d{transform:rotate(-1.5deg)}
+
+.e{
+grid-column:1/-1;
+width:62%;
+margin:auto;
+transform:rotate(2deg);
+}
+
+
+/* LITTLE SCENES */
+
+.scenes{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.scene{
+padding:25px;
+background:#160b0d;
+border:1px solid #48252c;
+min-height:125px;
+}
+
+.scene span{
+font-family:"DM Mono";
+font-size:8px;
+color:#8e6b65;
+letter-spacing:2px;
+}
+
+.scene p{
+font-size:20px;
+margin:10px 0 0;
+font-style:italic;
+}
+
+
+/* QUESTIONS */
+
+.questions{
+margin:90px auto;
+max-width:650px;
+text-align:center;
+}
+
+.question{
+font-size:21px;
+margin:30px 0;
+}
+
+button{
+font-family:"Cormorant Garamond";
+font-size:17px;
+background:transparent;
+color:#d8c0a5;
+border:1px solid #65313a;
+padding:8px 20px;
+margin:5px;
+cursor:pointer;
+}
+
+button:hover,
+button.active{
+background:#751f2e;
+color:#fff;
+}
+
+
+/* END CREDITS */
+
+.credits{
+border-top:1px solid #39272a;
+padding:60px 0;
+text-align:center;
+}
+
+.credits .end{
+font-family:"Italianno";
+font-size:65px;
+color:#b77f78;
+}
+
+.credits p{
+font-size:20px;
+line-height:1.6;
+max-width:570px;
+margin:15px auto;
+}
+
+.creditline{
+font-family:"DM Mono";
+font-size:8px;
+letter-spacing:3px;
+color:#70575a;
+margin-top:35px;
+}
+
+
+@media(max-width:650px){
+
+.page{width:94%}
+
+.hero{
+min-height:600px;
+}
+
+.title{
+font-size:62px;
+}
+
+.subtitle{
+font-size:39px;
+}
+
+.letter{
+padding:45px 25px;
+}
+
+.letter p{
+font-size:18px;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.e{
+grid-column:auto;
+width:100%;
+}
+
+.photo img{
+height:330px;
+}
+
+.scenes{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+<!-- OPENING -->
+
+<section class="hero">
+
+<div>
+
+<div class="film">
+A LOVE STORY · 2026
+</div>
+
+<div class="title">
+You & Me
+</div>
+
+<div class="subtitle">
+a little film about us
+</div>
+
+<div class="date">
+5 APRIL · 6 MONTHS
+</div>
+
+</div>
+
+<div class="scroll">
+↓ press play on life ↓
+</div>
+
+</section>
+
+
+<!-- FILM STRIP -->
+
+<div class="strip">
+
+<div class="frame"></div>
+<div class="frame"></div>
+<div class="frame"></div>
+<div class="frame"></div>
+<div class="frame"></div>
+<div class="frame"></div>
+<div class="frame"></div>
+<div class="frame"></div>
+<div class="frame"></div>
+<div class="frame"></div>
+
+</div>
+
+
+<!-- LETTER -->
+
+<section class="letter">
+
+<h2>Dear Rishi,</h2>
+
+<p>
+If our life together were a film, I think my favourite
+scenes would be the ones nobody else would notice.
+</p>
+
+<p>
+The random conversations. The stupid jokes.
+The moments when nothing particularly special was
+happening, yet somehow I was completely happy
+because you were there.
+</p>
+
+<p>
+You slowly became part of the little details of my life —
+the person I want to tell things to, laugh with,
+annoy, and make memories with.
+</p>
+
+<p>
+I don't want some perfectly written love story.
+I want ours. A little messy, a little ridiculous,
+very real, and completely ours.
+</p>
+
+<p>
+Six months is only one part of the story.
+But if I could choose the person beside me
+for all the scenes that haven't happened yet,
+I'd choose you.
+</p>
+
+<p>
+And honestly, I'd watch this film again.
+Every single time. ♡
+</p>
+
+<div class="signature">
+love, always
+</div>
+
+</section>
+
+
+<!-- MEMORIES -->
+
+<section class="section">
+
+<small>SCENE 02 · ARCHIVE</small>
+
+<h2>moments worth keeping</h2>
+
+</section>
+
+
+<section class="gallery">
+
+<div class="photo a">
+<img src="IMG_7559.jpeg">
+<span>this scene ♡</span>
+</div>
+
+<div class="photo b">
+<img src="IMG_7560.jpeg">
+<span>you & me</span>
+</div>
+
+<div class="photo c">
+<img src="IMG_7561.jpeg">
+<span>one for the archive</span>
+</div>
+
+<div class="photo d">
+<img src="IMG_7564.png">
+<span>still my favourite</span>
+</div>
+
+<div class="photo e">
+<img src="IMG_7566.jpeg">
+<span>freeze this moment ♡</span>
+</div>
+
+</section>
+
+
+<!-- LITTLE THINGS -->
+
+<section class="section">
+
+<small>SCENE 03 · OFF CAMERA</small>
+
+<h2>things I love about you</h2>
+
+</section>
+
+
+<section class="scenes">
+
+<div class="scene">
+<span>01</span>
+<p>the way you make me laugh</p>
+</div>
+
+<div class="scene">
+<span>02</span>
+<p>your completely ridiculous moments</p>
+</div>
+
+<div class="scene">
+<span>03</span>
+<p>how talking to you feels easy</p>
+</div>
+
+<div class="scene">
+<span>04</span>
+<p>the little things you remember</p>
+</div>
+
+<div class="scene">
+<span>05</span>
+<p>our random conversations</p>
+</div>
+
+<div class="scene">
+<span>06</span>
+<p>simply having you around ♡</p>
+</div>
+
+</section>
+
+
+<!-- QUESTIONS -->
+
+<section class="questions">
+
+<div style="font-size:25px;color:#9b3040;">♥</div>
+
+<div class="question">
+Would you watch the next scene with me?
+<br>
+<button onclick="pick(this)">always ♡</button>
+<button onclick="pick(this)">yes</button>
+</div>
+
+<div class="question">
+More memories?
+<br>
+<button onclick="pick(this)">obviously</button>
+<button onclick="pick(this)">always</button>
+</div>
+
+<div class="question">
+Can I keep annoying you?
+<br>
+<button onclick="pick(this)">yes ♡</button>
+<button onclick="pick(this)">you have no choice</button>
+</div>
+
+</section>
+
+
+<!-- END -->
+
+<section class="credits">
+
+<div class="end">
+to be continued...
+</div>
+
+<p>
+Happy six months, my love.
+</p>
+
+<p>
+If this is only the first part of our story,
+I already can't wait to see what the next scenes look like.
+♡
+</p>
+
+<div class="creditline">
+STARRING · YOU & ME
+<br><br>
+5 APRIL · FOREVER IN MY FAVOURITE SCENES
+</div>
+
+</section>
+
+
+</div>
+
+
+<!-- BACKGROUND MUSIC -->
+
+<audio id="music" autoplay loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+
+
+<script>
+
+function pick(button){
+
+button.parentElement
+.querySelectorAll("button")
+.forEach(x=>x.classList.remove("active"));
+
+button.classList.add("active");
+
+}
+
+const music=document.getElementById("music");
+
+music.volume=.22;
+
+window.addEventListener("load",()=>{
+music.play().catch(()=>{});
+});
+
+document.addEventListener("click",()=>{
+music.play().catch(()=>{});
+},{once:true});
+
+</script>
+
+</body>
+</html>
