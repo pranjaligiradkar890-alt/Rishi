@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Six Months ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=DM+Mono:wght@300;400&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#eee4e1;
+    color:#45383d;
+    font-family:"Cormorant Garamond",serif;
+    overflow-x:hidden;
+}
+
+/* ---------- BACKGROUND ---------- */
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-2;
+
+    background:
+        radial-gradient(circle at 20% 20%,rgba(213,177,196,.35),transparent 30%),
+        radial-gradient(circle at 80% 70%,rgba(190,165,193,.3),transparent 32%),
+        #eee4e1;
+}
+
+/* stationary flowers */
+
+.bg-flower{
+    position:fixed;
+    z-index:-1;
+    opacity:.18;
+    pointer-events:none;
+    font-size:130px;
+}
+
+.bg-left{
+    left:-30px;
+    top:80px;
+    transform:rotate(-15deg);
+}
+
+.bg-right{
+    right:-35px;
+    bottom:80px;
+    transform:rotate(15deg);
+}
+
+.bg-rose{
+    position:fixed;
+    z-index:-1;
+    opacity:.12;
+    font-size:100px;
+    pointer-events:none;
+}
+
+.rose-one{
+    right:8%;
+    top:20%;
+}
+
+.rose-two{
+    left:8%;
+    bottom:20%;
+}
+
+/* ---------- COMMON ---------- */
+
+section{
+    min-height:100vh;
+    padding:100px 22px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.center{
+    text-align:center;
+}
+
+.kicker{
+    font-family:"DM Mono",monospace;
+    font-size:11px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:#947985;
+    margin-bottom:25px;
+}
+
+h1,h2{
+    font-weight:500;
+}
+
+h1{
+    font-size:clamp(65px,15vw,150px);
+    line-height:.85;
+    font-family:"Caveat",cursive;
+    color:#5c4550;
+}
+
+h2{
+    font-size:clamp(45px,9vw,90px);
+    line-height:1;
+    color:#654d59;
+}
+
+p{
+    font-size:21px;
+    line-height:1.7;
+}
+
+.reveal{
+    animation:appear 1.2s ease both;
+}
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+    text-align:center;
+}
+
+.hero-small{
+    font-family:"Fredoka",sans-serif;
+    font-size:14px;
+    color:#9b7483;
+    letter-spacing:2px;
+    margin-top:35px;
+}
+
+.date{
+    margin-top:25px;
+    font-family:"DM Mono",monospace;
+    font-size:13px;
+    letter-spacing:4px;
+    color:#8c6975;
+}
+
+.love-note{
+    margin-top:35px;
+    font-family:"Caveat",cursive;
+    font-size:25px;
+    color:#87616e;
+}
+
+/* ---------- STORY ---------- */
+
+.story-text{
+    max-width:650px;
+    margin:40px auto;
+    text-align:center;
+}
+
+.story-text p{
+    margin-bottom:20px;
+}
+
+/* ---------- LETTER ---------- */
+
+.letter-wrap{
+    max-width:760px;
+    width:100%;
+    margin:40px auto;
+    position:relative;
+}
+
+.letter{
+    background:#f7eee0;
+    padding:60px 55px;
+    position:relative;
+
+    box-shadow:
+        0 25px 70px rgba(78,57,65,.16);
+
+    transform:rotate(-1deg);
+}
+
+.letter:before{
+    content:"";
+    position:absolute;
+    inset:12px;
+    border:1px solid rgba(120,85,90,.25);
+    pointer-events:none;
+}
+
+.postmark{
+    position:absolute;
+    right:25px;
+    top:22px;
+
+    width:85px;
+    height:85px;
+    border:1px dashed #aa7d87;
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    font-family:"DM Mono",monospace;
+    font-size:8px;
+    line-height:1.5;
+
+    color:#9b707b;
+    transform:rotate(12deg);
+}
+
+.stamp{
+    position:absolute;
+    left:25px;
+    top:25px;
+
+    width:72px;
+    height:72px;
+
+    background:#c9a1ad;
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-family:"Caveat",cursive;
+    font-size:20px;
+
+    border:5px dotted #f7eee0;
+
+    transform:rotate(-8deg);
+}
+
+.letter-content{
+    margin-top:45px;
+    position:relative;
+    z-index:2;
+}
+
+.letter-content h3{
+    font-family:"Caveat",cursive;
+    font-size:42px;
+    font-weight:500;
+    color:#70515c;
+    margin-bottom:20px;
+}
+
+.letter-content p{
+    font-size:20px;
+    line-height:1.8;
+    margin-bottom:18px;
+}
+
+.signature{
+    font-family:"Caveat",cursive;
+    font-size:30px;
+    margin-top:30px;
+    color:#765460;
+}
+
+/* ---------- PROMISE ---------- */
+
+.promise{
+    text-align:center;
+}
+
+.promise h2{
+    font-family:"Caveat",cursive;
+}
+
+.promise p{
+    max-width:600px;
+    margin:35px auto;
+}
+
+/* ---------- QUESTIONS ---------- */
+
+.questions{
+    max-width:650px;
+    width:100%;
+    margin:40px auto;
+}
+
+.question{
+    background:rgba(255,255,255,.35);
+    border:1px solid rgba(130,100,110,.15);
+
+    margin:14px 0;
+    padding:20px 24px;
+
+    border-radius:18px;
+
+    font-family:"Fredoka",sans-serif;
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.35s ease;
+}
+
+.question:hover{
+    transform:translateY(-3px);
+    background:rgba(255,255,255,.55);
+}
+
+.answer{
+    display:none;
+    margin-top:14px;
+
+    font-family:"Caveat",cursive;
+    font-size:24px;
+    color:#795664;
+    line-height:1.3;
+}
+
+.question.open .answer{
+    display:block;
+}
+
+/* ---------- PHOTO ARCHIVE ---------- */
+
+.archive{
+    min-height:auto;
+    padding-top:120px;
+    padding-bottom:120px;
+}
+
+.photos{
+    width:min(900px,100%);
+    margin:55px auto;
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:45px;
+}
+
+.photo{
+    background:#fffaf5;
+    padding:13px 13px 30px;
+
+    box-shadow:
+        0 18px 45px rgba(78,57,65,.14);
+
+    transition:.4s ease;
+}
+
+.photo:nth-child(1){
+    transform:rotate(-2deg);
+}
+
+.photo:nth-child(2){
+    transform:rotate(2deg);
+}
+
+.photo:nth-child(3){
+    transform:rotate(-1deg);
+}
+
+.photo:nth-child(4){
+    transform:rotate(2deg);
+}
+
+.photo:nth-child(5){
+    grid-column:1 / -1;
+    width:48%;
+    justify-self:center;
+    transform:rotate(-1deg);
+}
+
+.photo:hover{
+    transform:translateY(-8px) rotate(0deg);
+}
+
+.photo img{
+    width:100%;
+    height:300px;
+
+    object-fit:cover;
+    display:block;
+}
+
+.photo:nth-child(5) img{
+    height:340px;
+}
+
+.caption{
+    padding-top:14px;
+
+    text-align:center;
+
+    font-family:"Caveat",cursive;
+    font-size:25px;
+    color:#745460;
+}
+
+/* ---------- MUSIC ---------- */
+
+.music{
+    text-align:center;
+}
+
+.music-box{
+    max-width:500px;
+    margin:40px auto;
+    padding:40px 25px;
+
+    background:rgba(255,255,255,.38);
+    border-radius:30px;
+
+    box-shadow:0 20px 60px rgba(70,50,60,.12);
+}
+
+.music-icon{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.music-title{
+    font-family:"Caveat",cursive;
+    font-size:35px;
+    color:#765361;
+}
+
+.play-btn{
+    margin-top:25px;
+
+    border:none;
+    background:#80606c;
+    color:white;
+
+    padding:14px 28px;
+    border-radius:30px;
+
+    font-family:"Fredoka",sans-serif;
+    cursor:pointer;
+
+    transition:.3s ease;
+}
+
+.play-btn:hover{
+    transform:scale(1.05);
+}
+
+/* ---------- FINAL ---------- */
+
+.final{
+    text-align:center;
+}
+
+.final h2{
+    font-family:"Caveat",cursive;
+    font-size:100px;
+}
+
+.final-message{
+    max-width:650px;
+    margin:35px auto;
+}
+
+.forever{
+    margin-top:35px;
+    font-family:"Caveat",cursive;
+    font-size:35px;
+    color:#80606c;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:650px){
+
+    section{
+        padding:80px 18px;
+    }
+
+    .letter{
+        padding:55px 25px;
+    }
+
+    .postmark{
+        width:65px;
+        height:65px;
+        font-size:6px;
+        right:15px;
+    }
+
+    .stamp{
+        width:60px;
+        height:60px;
+        left:15px;
+    }
+
+    .photos{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .photo:nth-child(5){
+        grid-column:auto;
+        width:100%;
+    }
+
+    .photo img,
+    .photo:nth-child(5) img{
+        height:300px;
+    }
+
+    .final h2{
+        font-size:75px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- stationary flowers -->
+<div class="bg-flower bg-left">🌸</div>
+<div class="bg-flower bg-right">🌸</div>
+<div class="bg-rose rose-one">🌹</div>
+<div class="bg-rose rose-two">🌹</div>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="kicker reveal">
+        our little love archive
+    </div>
+
+    <h1 class="reveal">
+        six months.
+    </h1>
+
+    <p class="hero-small reveal">
+        and somehow, I still choose you.
+    </p>
+
+    <div class="date reveal">
+        05 · 04 · 2026
+    </div>
+
+    <div class="love-note reveal">
+        made with a ridiculous amount of love ♡
+    </div>
+
+</section>
+
+
+<!-- ================= STORY ================= -->
+
+<section>
+
+    <div class="kicker center">
+        chapter one
+    </div>
+
+    <h2 class="center reveal">
+        It wasn't always easy.
+    </h2>
+
+    <div class="story-text reveal">
+
+        <p>
+            There were good days.
+            There were confusing days.
+            There were days when we probably
+            drove each other a little crazy.
+        </p>
+
+        <p>
+            But somehow, through everything,
+            we kept finding our way back to each other.
+        </p>
+
+        <p>
+            And that's what makes this
+            so special to me.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LETTER ================= -->
+
+<section>
+
+    <div class="kicker center">
+        a letter I would leave in your pocket
+    </div>
+
+    <div class="letter-wrap reveal">
+
+        <div class="letter">
+
+            <div class="stamp">
+                LOVE<br>♡
+            </div>
+
+            <div class="postmark">
+                LOVE POST<br>
+                05 APR<br>
+                2026
+            </div>
+
+            <div class="letter-content">
+
+                <h3>
+                    My favourite person,
+                </h3>
+
+                <p>
+                    Six months doesn't sound like
+                    a lifetime.
+                </p>
+
+                <p>
+                    But when I think about all the
+                    little moments we've collected,
+                    somehow it feels like I've known
+                    you for much longer.
+                </p>
+
+                <p>
+                    Thank you for the laughs,
+                    the conversations, the chaos,
+                    the comfort, and every tiny
+                    moment in between.
+                </p>
+
+                <p>
+                    If I could go back to the beginning,
+                    I'd still choose you.
+                </p>
+
+                <div class="signature">
+                    yours, always ♡
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROMISE ================= -->
+
+<section class="promise">
+
+    <div class="kicker">
+        chapter two
+    </div>
+
+    <h2 class="reveal">
+        I'll be beside you.
+    </h2>
+
+    <p class="reveal">
+        Not because everything will always be
+        perfect, but because you're someone
+        worth choosing again and again.
+    </p>
+
+    <p class="reveal">
+        On the easy days.
+        On the weird days.
+        On the days when we don't know
+        what we're doing.
+    </p>
+
+</section>
+
+
+<!-- ================= QUESTIONS ================= -->
+
+<section>
+
+    <div class="kicker center">
+        things I never get tired of saying
+    </div>
+
+    <h2 class="center reveal">
+        little secrets.
+    </h2>
+
+    <div class="questions">
+
+        <div class="question">
+            Why do I love you? ♡
+
+            <div class="answer">
+                Because somehow you became my favourite
+                person without even asking permission.
+            </div>
+        </div>
+
+
+        <div class="question">
+            What makes me stay?
+
+            <div class="answer">
+                The little things. Your presence.
+                The way you make ordinary moments
+                feel special.
+            </div>
+        </div>
+
+
+        <div class="question">
+            What am I proud of?
+
+            <div class="answer">
+                Us. For making it through everything
+                and still being here.
+            </div>
+        </div>
+
+
+        <div class="question">
+            What do I want?
+
+            <div class="answer">
+                More memories.
+                More stupid jokes.
+                More late-night conversations.
+                More us.
+            </div>
+        </div>
+
+
+        <div class="question">
+            One last thing...
+
+            <div class="answer">
+                I hope this is only the beginning. ♡
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FIVE PHOTOS ================= -->
+
+<section class="archive">
+
+    <div class="kicker center">
+        evidence that we were here
+    </div>
+
+    <h2 class="center reveal">
+        our little archive.
+    </h2>
+
+    <div class="photos">
+
+        <div class="photo reveal">
+            <img src="photo1.jpeg" alt="Our memory 1">
+            <div class="caption">
+                this moment ♡
+            </div>
+        </div>
+
+
+        <div class="photo reveal">
+            <img src="photo2.jpeg" alt="Our memory 2">
+            <div class="caption">
+                my favourite memory
+            </div>
+        </div>
+
+
+        <div class="photo reveal">
+            <img src="photo3.jpeg" alt="Our memory 3">
+            <div class="caption">
+                us being us
+            </div>
+        </div>
+
+
+        <div class="photo reveal">
+            <img src="photo4.png" alt="Our memory 4">
+            <div class="caption">
+                keep this forever
+            </div>
+        </div>
+
+
+        <div class="photo reveal">
+            <img src="photo5.jpeg" alt="Our memory 5">
+            <div class="caption">
+                one more for my heart ♡
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MUSIC ================= -->
+
+<section class="music">
+
+    <div class="kicker">
+        press play
+    </div>
+
+    <h2 class="reveal">
+        our song.
+    </h2>
+
+    <div class="music-box reveal">
+
+        <div class="music-icon">
+            ♡
+        </div>
+
+        <div class="music-title">
+            a little soundtrack for us
+        </div>
+
+        <button class="play-btn" onclick="toggleMusic()">
+            ♡ play our song
+        </button>
+
+        <audio id="song" src="song.mp3"></audio>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FINAL ================= -->
+
+<section class="final">
+
+    <div class="kicker">
+        six months later
+    </div>
+
+    <h2 class="reveal">
+        Still you.
+    </h2>
+
+    <div class="final-message reveal">
+
+        <p>
+            Happy six months, my love.
+        </p>
+
+        <p>
+            Thank you for becoming such a
+            beautiful part of my life.
+        </p>
+
+        <p>
+            Here's to everything we've been,
+            everything we are,
+            and everything still waiting for us.
+        </p>
+
+    </div>
+
+    <div class="forever reveal">
+        05 · 04 · 2026 — forever ♡
+    </div>
+
+</section>
+
+
+<script>
+
+/* ---------- QUESTIONS ---------- */
+
+const questions =
+document.querySelectorAll(".question");
+
+questions.forEach(question => {
+
+    question.addEventListener("click", () => {
+
+        question.classList.toggle("open");
+
+    });
+
+});
+
+
+/* ---------- MUSIC ---------- */
+
+const song =
+document.getElementById("song");
+
+const button =
+document.querySelector(".play-btn");
+
+function toggleMusic(){
+
+    if(song.paused){
+
+        song.play();
+
+        button.innerHTML =
+        "♡ pause our song";
+
+    }else{
+
+        song.pause();
+
+        button.innerHTML =
+        "♡ play our song";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
