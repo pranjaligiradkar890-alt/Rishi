@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Italianno&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Mono&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 15% 15%,#4b101c,transparent 30%),
+    radial-gradient(circle at 85% 85%,#350b14,transparent 30%),
+    #080506;
+  color:#ead8c0;
+  font-family:"Cormorant Garamond",serif;
+}
+
+body:after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.06;
+  background:repeating-linear-gradient(
+    0deg,
+    #fff 0px,
+    transparent 1px,
+    transparent 4px
+  );
+}
+
+.page{
+  width:min(850px,92%);
+  margin:auto;
+  padding:35px 0 55px;
+}
+
+
+/* OLD PAPER */
+
+.paper{
+  position:relative;
+  background:
+    linear-gradient(135deg,#f4e2c2,#d8b98b);
+  color:#38201e;
+  padding:48px 42px;
+  margin:25px auto;
+  max-width:720px;
+  box-shadow:0 20px 60px #000;
+  border:1px solid #9c7954;
+}
+
+.paper:before{
+  content:"♥";
+  position:absolute;
+  top:18px;
+  left:22px;
+  color:#7e1d2b;
+  font-size:22px;
+}
+
+.paper:after{
+  content:"♡";
+  position:absolute;
+  bottom:14px;
+  right:20px;
+  color:#7e1d2b;
+  font-size:25px;
+}
+
+.tape{
+  position:absolute;
+  width:90px;
+  height:22px;
+  background:#a98167;
+  opacity:.45;
+}
+
+.tape1{
+  top:-9px;
+  left:30px;
+  transform:rotate(-5deg);
+}
+
+.tape2{
+  bottom:-9px;
+  right:35px;
+  transform:rotate(6deg);
+}
+
+.stamp{
+  position:absolute;
+  top:17px;
+  right:18px;
+  width:65px;
+  height:65px;
+  border:2px dashed #862636;
+  color:#862636;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-family:"DM Mono";
+  font-size:8px;
+  line-height:1.5;
+  transform:rotate(7deg);
+}
+
+.intro{
+  min-height:82vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.script{
+  font-family:"Italianno",cursive;
+  font-size:68px;
+  line-height:.9;
+  color:#681623;
+  text-align:center;
+}
+
+.date{
+  text-align:center;
+  margin-top:22px;
+  font-family:"DM Mono";
+  font-size:9px;
+  letter-spacing:3px;
+  color:#79564d;
+}
+
+
+/* LETTER */
+
+.letter{
+  font-size:20px;
+  line-height:1.55;
+}
+
+.letter .hello{
+  font-family:"Italianno";
+  font-size:42px;
+  color:#681623;
+}
+
+.letter p{
+  margin:0 0 16px;
+}
+
+.signature{
+  text-align:right;
+  font-family:"Italianno";
+  font-size:38px;
+  color:#681623;
+}
+
+
+/* PHOTOS */
+
+.section-name{
+  text-align:center;
+  font-family:"Italianno";
+  font-size:48px;
+  color:#c9a47d;
+  margin:55px 0 25px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:28px;
+}
+
+.polaroid{
+  position:relative;
+  background:#eee1c9;
+  padding:10px 10px 38px;
+  box-shadow:0 16px 35px #000;
+}
+
+.polaroid img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  display:block;
+}
+
+.polaroid small{
+  position:absolute;
+  bottom:7px;
+  left:14px;
+  color:#412421;
+  font-family:"Italianno";
+  font-size:25px;
+}
+
+.pin{
+  width:13px;
+  height:13px;
+  border-radius:50%;
+  background:#7d1d2d;
+  position:absolute;
+  top:-7px;
+  left:50%;
+  box-shadow:0 2px 5px #000;
+}
+
+.p1{transform:rotate(-2deg)}
+.p2{transform:rotate(2deg)}
+.p3{transform:rotate(1deg)}
+.p4{transform:rotate(-2deg)}
+.p5{
+  transform:rotate(2deg);
+  grid-column:1 / -1;
+  width:58%;
+  margin:auto;
+}
+
+
+/* LITTLE NOTES */
+
+.notes{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.note{
+  position:relative;
+  padding:22px 15px;
+  text-align:center;
+  background:#1d0b10;
+  border:1px solid #60303a;
+  box-shadow:0 10px 25px #000;
+}
+
+.note:before{
+  content:"♡";
+  display:block;
+  color:#9b3040;
+  font-size:18px;
+  margin-bottom:5px;
+}
+
+.note p{
+  margin:0;
+  font-size:17px;
+}
+
+
+/* QUESTIONS */
+
+.questions{
+  margin:55px auto;
+  max-width:650px;
+  padding:30px 20px;
+  text-align:center;
+  background:#13070b;
+  border:1px solid #60303a;
+}
+
+.question{
+  font-size:20px;
+  margin:25px 0;
+}
+
+button{
+  font-family:"Cormorant Garamond";
+  font-size:17px;
+  padding:8px 20px;
+  margin:5px;
+  color:#dfc6aa;
+  background:#0c0507;
+  border:1px solid #78303c;
+  cursor:pointer;
+}
+
+button:hover,
+button.active{
+  background:#6f1c2b;
+  color:white;
+}
+
+
+/* END */
+
+.end{
+  text-align:center;
+  padding:55px 15px 20px;
+}
+
+.end .script{
+  font-size:62px;
+  color:#c5977e;
+}
+
+.end p{
+  font-size:20px;
+  line-height:1.5;
+  max-width:600px;
+  margin:18px auto;
+}
+
+.footer{
+  text-align:center;
+  font-family:"DM Mono";
+  font-size:8px;
+  letter-spacing:3px;
+  color:#70434b;
+  margin-top:35px;
+}
+
+
+@media(max-width:650px){
+
+  .page{
+    width:94%;
+  }
+
+  .paper{
+    padding:42px 23px;
+  }
+
+  .script{
+    font-size:53px;
+  }
+
+  .letter{
+    font-size:18px;
+  }
+
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .p5{
+    grid-column:auto;
+    width:100%;
+  }
+
+  .polaroid img{
+    height:330px;
+  }
+
+  .notes{
+    grid-template-columns:1fr;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+<!-- OPENING -->
+
+<section class="intro">
+
+  <div class="paper">
+
+    <div class="stamp">
+      POST<br>
+      WITH LOVE<br>
+      ♥
+    </div>
+
+    <div class="tape tape1"></div>
+
+    <div class="script">
+      for you, always ♡
+    </div>
+
+    <div class="date">
+      a little piece of my heart
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- LETTER -->
+
+<section class="paper letter">
+
+  <div class="stamp">
+    SEALED<br>
+    WITH<br>
+    LOVE
+  </div>
+
+  <div class="tape tape2"></div>
+
+  <div class="hello">
+    My dearest Rishi,
+  </div>
+
+  <p>
+    I don't think you realise how quietly you became one
+    of my favourite parts of life.
+  </p>
+
+  <p>
+    Somewhere between our conversations, our laughter,
+    our stupid little moments and all the ordinary days,
+    you became someone my heart started looking for
+    without even asking permission.
+  </p>
+
+  <p>
+    I love the comfort of you. The way talking to you can
+    make a normal day feel a little softer. The way some
+    memories become special simply because you were there.
+  </p>
+
+  <p>
+    I don't need our story to be perfect. I just want it to
+    be ours — honest, warm, a little chaotic and filled with
+    moments we'll remember years from now.
+  </p>
+
+  <p>
+    Six months, and somehow there are already so many
+    little pieces of you that I carry with me.
+  </p>
+
+  <p>
+    If I could keep one thing forever, it would probably be
+    this feeling — knowing that somewhere in this huge world,
+    I found you.
+  </p>
+
+  <p>
+    And if I had to choose again, I'd still choose you. ♡
+  </p>
+
+  <div class="signature">
+    yours, always
+  </div>
+
+</section>
+
+
+<!-- PHOTOS -->
+
+<div class="section-name">
+  little pieces of us
+</div>
+
+<section class="gallery">
+
+  <div class="polaroid p1">
+    <div class="pin"></div>
+    <img src="IMG_7559.jpeg">
+    <small>one of my favourites ♡</small>
+  </div>
+
+  <div class="polaroid p2">
+    <div class="pin"></div>
+    <img src="IMG_7560.jpeg">
+    <small>you & me</small>
+  </div>
+
+  <div class="polaroid p3">
+    <div class="pin"></div>
+    <img src="IMG_7561.jpeg">
+    <small>a little memory</small>
+  </div>
+
+  <div class="polaroid p4">
+    <div class="pin"></div>
+    <img src="IMG_7564.png">
+    <small>keep this forever</small>
+  </div>
+
+  <div class="polaroid p5">
+    <div class="pin"></div>
+    <img src="IMG_7566.jpeg">
+    <small>my favourite us ♡</small>
+  </div>
+
+</section>
+
+
+<!-- NOTES -->
+
+<div class="section-name">
+  little things I love
+</div>
+
+<section class="notes">
+
+  <div class="note">
+    <p>the way you make me laugh</p>
+  </div>
+
+  <div class="note">
+    <p>your ridiculous little moments</p>
+  </div>
+
+  <div class="note">
+    <p>how comfortable you feel</p>
+  </div>
+
+  <div class="note">
+    <p>the things you remember</p>
+  </div>
+
+  <div class="note">
+    <p>your voice on ordinary days</p>
+  </div>
+
+  <div class="note">
+    <p>simply being yours ♡</p>
+  </div>
+
+</section>
+
+
+<!-- QUESTIONS -->
+
+<section class="questions">
+
+  <div style="font-size:25px;color:#9b3040;">♥</div>
+
+  <div class="question">
+    Will you keep choosing me?
+    <br>
+    <button onclick="pick(this)">yes ♡</button>
+    <button onclick="pick(this)">always</button>
+  </div>
+
+  <div class="question">
+    One more adventure together?
+    <br>
+    <button onclick="pick(this)">yes</button>
+    <button onclick="pick(this)">of course ♡</button>
+  </div>
+
+  <div class="question">
+    Can I annoy you forever?
+    <br>
+    <button onclick="pick(this)">yes</button>
+    <button onclick="pick(this)">fine ♡</button>
+  </div>
+
+</section>
+
+
+<!-- END -->
+
+<section class="end">
+
+  <div class="script">
+    until the next page...
+  </div>
+
+  <p>
+    Happy six months, my love.
+    Thank you for becoming one of the sweetest chapters
+    I never knew I needed.
+  </p>
+
+  <p>
+    Here's to more photographs, more laughter,
+    more ordinary days that somehow become memories. ♡
+  </p>
+
+</section>
+
+
+<div class="footer">
+  sealed with love · six months · ♡
+</div>
+
+</div>
+
+
+<!-- BACKGROUND MUSIC -->
+
+<audio id="music" autoplay loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+
+<script>
+
+function pick(button){
+
+  const parent = button.parentElement;
+
+  parent.querySelectorAll("button")
+    .forEach(b => b.classList.remove("active"));
+
+  button.classList.add("active");
+}
+
+const music = document.getElementById("music");
+
+music.volume = 0.22;
+
+window.addEventListener("load",()=>{
+  music.play().catch(()=>{});
+});
+
+document.addEventListener("click",()=>{
+  music.play().catch(()=>{});
+},{once:true});
+
+</script>
+
+</body>
+</html>
